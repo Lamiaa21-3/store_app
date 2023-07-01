@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:store_app/services/get_all_product.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -7,24 +10,44 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
-      home: GetAllProduct() ,
+    return const MaterialApp(
+      home: Home() ,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, });
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: TextButton(
+          child: Text('GetData'),
+          onPressed: () async{
+          http.Response response= await  http.post(Uri.parse('https://fakestoreapi.com/products',),body: {
+            'title': 'test product',
+           ' price': '13.5',
+            'description':' lorem ipsum set',
+            'image':' https://i.pravatar.cc',
+           ' category':' electronic',
+            },
+            headers: {
+            'Accept': '*/*',
+              'Authorization': 'Bearer',
+            }
+            );
+            print(response.body);
+
+          },
+        )
+      ),
+    );
   }
 }
+
 
