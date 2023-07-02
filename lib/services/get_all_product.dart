@@ -12,15 +12,28 @@ import '../modeles/get_product.dart';
 class GetAllProduct {
   Future<List <GetProduct>> getAllProfile () async
   {
-    List <dynamic> data = await Api().get( url: 'https://fakestoreapi.com/products');
+    print('ssssssssssssssssssssssss');
+    try{
+      http.Response response = await http.get(Uri.parse('https://fakestoreapi.com/products'));
+      print(response.body);
+      // print('==========');
+      //
+      //  print(data);
+      //  print('==========');
+      // List <GetProduct> productList =[];
+      // for( int i = 0 ; i< data.length ; i++)
+      // {
+      //   productList.add(GetProduct.fromJson(data[i]),
+      //   );
+      // }
+      // print('ddoneeeeeeeeeeeeeeee');
+      // return productList;
+      return [];
 
-
-    List <GetProduct> productList =[];
-    for( int i = 0 ; i< data.length ; i++)
-    {
-      productList.add(GetProduct.fromJson(data[i]),
-      );
+    }catch(error){
+      print('errorrrrrrrrrrrrrrrrr');
+      print(error);
+      return [];
     }
-    return productList;
   }
 }
