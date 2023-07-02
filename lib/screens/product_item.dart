@@ -41,7 +41,7 @@ class ProductItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                         r'$' ' {$product.price.toString()}',
+                         r'$' ' ${product.price.toString()}',
                           style: TextStyle(fontSize: 16),
                         ),
                         Icon(

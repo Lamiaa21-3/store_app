@@ -4,21 +4,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-   get({required String url, @required String? token }) async {
+static get({required String url,  String? token }) async {
     Map<String, String> headers = {};
-    if (token != null) {
+ if (token != null) {
       headers.addAll({
         'Authorization': ' Bearer $token',
       });
-      http.Response response = await http.get(Uri.parse(url), headers: headers);
-      print(response.body);
+     
+    }
+     http.Response response = await http.get(Uri.parse(url), headers: headers);
+      print('doneee1');
       if (response.statusCode == 200) {
+        print('donee');
         return jsonDecode(response.body);
       } else {
         throw Exception(
             ' there are problem with status code ${response.statusCode}');
       }
-    }
+   
   }
 
 

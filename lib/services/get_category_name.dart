@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class CategoryName {
   Future <List <GetProduct>> getCategoryNmae ({required String categoryName }) async{
-    List <dynamic> data= await Api().get(url: 'https://fakestoreapi.com/products/category/$categoryName');
+    List <dynamic> data= await Api.get(url: 'https://fakestoreapi.com/products/category/$categoryName');
 
     List <GetProduct> productList =[];
     for( int i = 0 ; i< data.length ; i++)

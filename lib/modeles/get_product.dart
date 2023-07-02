@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 
 class GetProduct {
   final int id;
   final String title;
-  final double price;
+  final dynamic price;
   final String description;
   final String category;
   final String image;
@@ -25,7 +24,7 @@ class GetProduct {
         title: jsonData['title'],
         price: jsonData['price'],
         description: jsonData['description'],
-        category: jsonData[' category'],
+        category: jsonData['category'],
       rate: RankingModel.fromJson(jsonData['rating'])
 
     );
@@ -34,7 +33,7 @@ class GetProduct {
 }
 
 class RankingModel {
-  final double rate;
+  final dynamic rate;
   final int count;
 
   RankingModel({required this.rate, required this.count});
