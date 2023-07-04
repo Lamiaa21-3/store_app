@@ -1,13 +1,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:store_app/modeles/get_product.dart';
+import 'package:store_app/screens/updeta_product_page.dart';
 class ProductItem extends StatelessWidget {
   ProductItem({Key? key, required this.product}) : super(key: key);
   GetProduct product ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context, UpdetaProductPage.id);
+      },
+      child: Container(
       width: 100,
       height: 100,
       decoration: BoxDecoration(boxShadow: [
@@ -55,8 +60,8 @@ class ProductItem extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 100,
-              bottom: 100,
+              left: 40,
+              bottom: 50,
 
               child: Image.network(
 
@@ -68,6 +73,7 @@ class ProductItem extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }

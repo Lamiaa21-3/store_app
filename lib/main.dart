@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:store_app/screens/home_page.dart';
+import 'package:store_app/screens/updeta_product_page.dart';
 import 'package:store_app/services/get_all_product.dart';
 import 'package:http/http.dart' as http;
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomePage.id: (context) => HomePage(),
+        UpdetaProductPage.id : (context) => UpdetaProductPage(),
       },
         initialRoute: HomePage.id,
       home: HomePage(),
