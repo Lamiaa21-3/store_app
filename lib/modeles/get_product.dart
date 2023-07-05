@@ -1,7 +1,7 @@
 
 class GetProduct {
   final int id;
-  final String title;
+  final String title ;
   final dynamic price;
   final String description;
   final String category;

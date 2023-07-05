@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:store_app/screens/done_update.dart';
 import 'package:store_app/screens/home_page.dart';
 import 'package:store_app/screens/updeta_product_page.dart';
 import 'package:store_app/services/get_all_product.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomePage.id: (context) => HomePage(),
         UpdetaProductPage.id : (context) => UpdetaProductPage(),
+        Done_Updtae.id : (context) => Done_Updtae(),
       },
         initialRoute: HomePage.id,
       home: HomePage(),
